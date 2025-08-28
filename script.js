@@ -39,3 +39,23 @@ function initAccordion() {
     item.addEventListener("click", activeAccordion);
   });
 }
+initAccordion();
+
+function initScrollSuave() {
+  const internalink = document.querySelectorAll('.js-menu a[href^="#"]');
+  console.log(internalink);
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
+  internalink.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
+  });
+}
+initScrollSuave();
