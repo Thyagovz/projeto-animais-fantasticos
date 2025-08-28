@@ -43,7 +43,6 @@ initAccordion();
 
 function initScrollSuave() {
   const internalink = document.querySelectorAll('.js-menu a[href^="#"]');
-  console.log(internalink);
   function scrollToSection(event) {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
@@ -59,3 +58,26 @@ function initScrollSuave() {
   });
 }
 initScrollSuave();
+
+function initAnimationScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+  if (sections.length) {
+    const windowHalf = window.innerHeight * 0.6;
+
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = sectionTop - windowHalf < 0;
+        if (isSectionVisible) {
+          section.classList.add("active");
+        } else {
+          section.classList.remove("active");
+        }
+      });
+    }
+    animaScroll();
+
+    window.addEventListener("scroll", animaScroll);
+  }
+}
+initAnimationScroll();
