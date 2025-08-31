@@ -217,7 +217,11 @@
 
       <section class="grid-section contact" data-anime="scroll" id="contact">
         <h1 class="title">Contato</h1>
-        <div class="map">
+        <div
+          class="map"
+          data-tooltip
+          aria-label="Endereço próximo ao estacionamento."
+        >
           <img
             src="img/mapa.png"
             width="1200"
@@ -237,7 +241,7 @@
         <p>Todos os direitos reservados.</p>
       </footer>
     </div>
-    
+
     <section class="modal-container" data-modal="container">
       <div class="modal">
         <button data-modal="close" class="close">X</button>
@@ -246,7 +250,8 @@
           <input type="text" for="email" id="email" />
           <label for="password">Senha</label>
           <input type="password" for="password" id="password" />
-          <button type="submit">Entrar</button> 
+          <button type="submit">Entrar</button>
+        </form>
       </div>
     </section>
   </body>
