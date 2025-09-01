@@ -21,7 +21,12 @@
   <body>
     <div class="grid-container">
       <nav class="menu" data-menu="suave">
-        <ul>
+        <button
+          data-menu="button"
+          aria-expanded="false"
+          aria-controls="menu"
+        >Menu</button>
+        <ul data-menu="list" id="menu">
           <li><a href="#animals">Animais</a></li>
           <li data-dropdown="dropdown">
             <a href="sobre.html">Sobre</a>
