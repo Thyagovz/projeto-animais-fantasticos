@@ -306,7 +306,7 @@ body {
   transition: 0.3s;
 }
 
-.js [data-anime="scroll"] {
+.js [data-anime="scroll"].active {
   opacity: 1;
   transform: translate3d(-0, 0, 0);
 }
