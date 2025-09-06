@@ -3,18 +3,18 @@ export default function initModal() {
   const closeButton = document.querySelector('[data-modal="close"]');
   const containerModal = document.querySelector('[data-modal="container"]');
 
+  function toggleModal(e) {
+    e.preventDefault();
+    containerModal.classList.toggle("active");
+  }
+
+  function clickOutModal(e) {
+    if (e.target === this) {
+      toggleModal(e);
+    }
+  }
+
   if (showButton && closeButton && containerModal) {
-    function toggleModal(e) {
-      e.preventDefault();
-      containerModal.classList.toggle("active");
-    }
-
-    function clickOutModal(e) {
-      if (e.target === this) {
-        toggleModal(e);
-      }
-    }
-
     showButton.addEventListener("click", toggleModal);
     closeButton.addEventListener("click", toggleModal);
     containerModal.addEventListener("click", clickOutModal);
