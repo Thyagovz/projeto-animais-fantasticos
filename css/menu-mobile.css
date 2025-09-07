@@ -45,14 +45,14 @@
     padding: 60px 0 20px 0;
     box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
   }
-}
 
-.js [data-menu="list"].active {
-  display: block;
-  animation: show-right 0.3s forwards;
-}
+  .js [data-menu="list"].active {
+    display: block;
+    animation: show-right 0.3s forwards;
+  }
 
-.js .dropdown-menu {
-  position: static;
-  border: none;
+  .js .dropdown-menu {
+    position: static;
+    border: none;
+  }
 }
