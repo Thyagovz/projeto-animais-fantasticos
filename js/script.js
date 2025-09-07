@@ -8,6 +8,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initOperation from "./modules/operation.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import initAnimationScroll from "./modules/scroll-animation.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -28,3 +29,4 @@ initMenuMobile();
 initOperation();
 initFetchAnimals();
 initFetchBitcoin();
+initAnimationScroll()
