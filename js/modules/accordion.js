@@ -5,8 +5,8 @@ export default class Accordion {
   }
 
   toggleAccordion(item) {
-    item.classList.add(this.activeClass);
-    item.nextElementSibling.classList.add(this.activeClass);
+    item.classList.toggle(this.activeClass);
+    item.nextElementSibling.classList.toggle(this.activeClass);
   }
 
   addAccordionEvent() {
@@ -21,4 +21,4 @@ export default class Accordion {
       this.addAccordionEvent();
     }
   }
-} 
+}
