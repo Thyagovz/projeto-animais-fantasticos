@@ -1,11 +1,11 @@
-export default function initFetchBitcoin() {}
-
-fetch("https://blockchain.info/ticker")
-  .then((response) => response.json())
-  .then((bitcoin) => {
-    const btcPrice = document.querySelector(".btc-price");
-    btcPrice.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
-  })
-  .catch((erro) => {
-    console.log(Error(erro));
-  });
+export default function fetchBitcoin(url, target) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((bitcoin) => {
+      const btcPrice = document.querySelector(target);
+      btcPrice.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
+    })
+    .catch((erro) => {
+      console.log(Error(erro));
+    });
+}
