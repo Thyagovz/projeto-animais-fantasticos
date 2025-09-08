@@ -5,7 +5,7 @@ export default class ScrollAnimation {
     this.sections = document.querySelectorAll(sections);
     this.windowHalf = window.innerHeight * 0.6;
     this.checkDistance = this.checkDistance.bind(this);
-    this.debouncedCheckDistance = debounce(this.checkDistance, 200);
+    this.debouncedCheckDistance = debounce(this.checkDistance.bind(this), 50);
   }
 
   getDistance() {
