@@ -1,16 +1,38 @@
-export default function initOperation() {
-  const operation = document.querySelector("[data-week]");
-  const weekDays = operation.dataset.week.split(",").map(Number);
-  const weekHour = operation.dataset.hour.split(",").map(Number);
+export default class Operation {
+  constructor(operation, activeClass) {
+    this.operation = document.querySelector(operation);
+    this.activeClass = activeClass;
+  }
 
-  const dateNow = new Date();
-  const dayNow = dateNow.getDay();
-  const hourNow = dateNow.getHours();
+  dataOperation() {
+    this.weekDays = this.operation.dataset.week.split(",").map(Number);
+    this.weekHour = this.operation.dataset.hour.split(",").map(Number);
+  }
 
-  const weekopen = weekDays.indexOf(dayNow) !== -1;
-  let hourOpen = hourNow >= weekHour[0] && hourNow < weekHour[1];
+  dataNow() {
+    this.dateNow = new Date();
+    this.dayNow = this.dateNow.getDay();
+    this.hourNow = this.dateNow.getUTCHours() - 3;
+  }
 
-  if (weekopen && hourOpen) {
-    operation.classList.add("open");
+  isOpen() {
+    const weekopen = this.weekDays.indexOf(this.dayNow) !== -1;
+    const hourOpen =
+      this.hourNow >= this.weekHour[0] && this.hourNow < this.weekHour[1];
+    return weekopen && hourOpen;
+  }
+  activeOpen() {
+    if (this.isOpen()) {
+      this.operation.classList.add(this.activeClass);
+    }
+  }
+
+  init() {
+    if (this.operation) {
+      this.dataOperation();
+      this.dataNow();
+      this.activeOpen();
+    }
+    return this;
   }
 }

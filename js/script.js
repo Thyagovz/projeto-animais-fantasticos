@@ -5,9 +5,9 @@ import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
-import initOperation from "./modules/operation.js";
-import fetchAnimals from "./modules/fetch-animals.js";
-import fetchBitcoin from "./modules/fetch-bitcoin.js";
+import Operation from "./modules/operation.js";
+import FetchAnimals from "./modules/fetch-animals.js";
+import FetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnimation from "./modules/scroll-animation.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -41,7 +41,8 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initOperation();
+const operation = new Operation("[data-week]", "open");
+operation.init();
 
-fetchAnimals("../../animalsapi.json", ".numbers-grid");
-fetchBitcoin("https://blockchain.info/ticker", ".btc-price");
+FetchAnimals("../../animalsapi.json", ".numbers-grid");
+FetchBitcoin("https://blockchain.info/ticker", ".btc-price");
