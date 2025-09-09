@@ -48,6 +48,7 @@ operation.init();
 const slide = new SlideNav(".slide", ".slide-wrapper");
 slide.init();
 slide.addArrow(".prev", ".next");
+slide.addControl()
 
 FetchAnimals("./animalsapi.json", ".numbers-grid");
 FetchBitcoin("https://blockchain.info/ticker", ".btc-price");
