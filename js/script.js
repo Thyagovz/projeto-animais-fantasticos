@@ -48,7 +48,5 @@ operation.init();
 const slide = new Slide(".slide", ".slide-wrapper");
 slide.init();
 
-slide.changeSlide(3);
-
 FetchAnimals("./animalsapi.json", ".numbers-grid");
 FetchBitcoin("https://blockchain.info/ticker", ".btc-price");
