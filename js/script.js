@@ -9,6 +9,7 @@ import Operation from "./modules/operation.js";
 import FetchAnimals from "./modules/fetch-animals.js";
 import FetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnimation from "./modules/scroll-animation.js";
+import Slide from "./modules/slide.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -43,6 +44,9 @@ menuMobile.init();
 
 const operation = new Operation("[data-week]", "open");
 operation.init();
+
+const slide = new Slide(".slide", ".slide-wrapper");
+slide.init();
 
 FetchAnimals("./animalsapi.json", ".numbers-grid");
 FetchBitcoin("https://blockchain.info/ticker", ".btc-price");
