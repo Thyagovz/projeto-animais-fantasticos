@@ -17,9 +17,9 @@ export default class DropdownMenu {
   activeDropdownMenu(event) {
     event.preventDefault();
     const element = event.currentTarget;
-    this.classList.add(this.activeClass);
+    element.classList.add(this.activeClass);
     outsideClick(element, this.events, () => {
-      this.classList.remove("active");
+      element.classList.remove("active");
     });
   }
 
@@ -32,7 +32,7 @@ export default class DropdownMenu {
   }
 
   init() {
-    if (this.dropdownMenu.lenght) {
+    if (this.dropdownMenu.length) {
       this.addDropdownMenuEvent();
     }
     return this;
