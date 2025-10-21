@@ -1,8 +1,8 @@
-# Projeto: Site Interativo (HTML/CSS/JS)
+# Projeto: Site Interativo Animais Fantásticos (HTML/CSS/JS)
 
 ## Descrição
 
-Site estático com componentes JavaScript modulares (menu, modal, slide, animações, fetch de dados) e estilos organizados. Ideal como base para landing pages interativas ou para estudo de padrões de UI/UX com JS vanilla.
+Site estático com componentes JavaScript modulares (menu, modal, slide, animações, fetch de dados) e estilos organizados. Ideal como base para estudo de padrões com JS vanilla.
 
 ## Principais características
 
